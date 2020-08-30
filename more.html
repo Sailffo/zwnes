@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-xs-6 col-md-3" style="float: left;">
+            <a href="#" class="thumbnail">
+                <img src="./img/wd1.jpg" alt="..." style="width: 300px; height: 300px; margin-right: 5px;" id="img1">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3" style="float: left;">
+            <a href="#" class="thumbnail">
+                <img src="./img/wd11.jpg" alt="..." style="width: 300px; height: 300px; margin-right: 5px;" id="img2">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3" style="float: left;">
+            <a href="#" class="thumbnail">
+                <img src="./img/wd111.jpg" alt="..." style="width: 300px; height: 300px; margin-right: 5px;" id="img3">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3" style="float: left;">
+            <a href="#" class="thumbnail">
+                <img src="./img/wd1111.jpg" alt="..." style="width: 300px; height: 300px;" id="img4">
+            </a>
+        </div>
+    </div>
+    <script>
+        let img1 = document.getElementById('img1');
+        let img2 = document.getElementById('img2');
+        let img3 = document.getElementById('img3');
+        let img4 = document.getElementById('img4');
+        let id = window.location.href.slice(74);
+        if (id == 2) {
+            img1.src = 'img/wd2.jpg';
+            img2.src = 'img/wd22.jpg';
+            img3.src = 'img/wd222.jpg';
+            img4.src = 'img/wd222.jpg';
+        } else if (id == 3) {
+            img1.src = 'img/wd3.jpg';
+            img2.src = 'img/wd33.jpg';
+            img3.src = 'img/wd333.jpg';
+            img4.src = 'img/wd3333.jpg';
+        }
+    </script>
+    <script src="js/jquery.js"></script>
+    <script src="layer/layer.js"></script>
+</body>
+
+</html>
