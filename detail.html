@@ -112,7 +112,9 @@
     <script>
         let img = document.getElementById('img');
         let name = document.getElementById('name');
-        let id = window.location.href.slice(76);
+        let url = window.location.href;
+        let current = url.substring(url.length - 5);
+        let id = current[0] == '?' ? current[current.length - 1] : current.substring(current.length - 2);
         if (id == 1) {
             img.src = 'img/蜜桃吉娃娃.png';
             name.innerText = '蜜桃吉娃娃';
