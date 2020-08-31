@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="css/common.css">
     <!-- 引入详情页面的css文件 -->
     <link rel="stylesheet" href="css/detail.css">
+    <script src="js/jquery.js"></script>
+    <script src="layer/layer.js"></script>
 </head>
 
 <body>
@@ -102,7 +104,7 @@
                             <a href="javascript:;" class="add">+</a>
                             <a href="javascript:;" class="reduce">-</a>
                         </div>
-                        <a href="#" class="addcar">加入购物车</a>
+                        <a href="#" class="addcar" id='parentIframe1'>立即购买</a>
                     </div>
                 </div>
             </div>
@@ -112,7 +114,9 @@
     <script>
         let img = document.getElementById('img');
         let name = document.getElementById('name');
-        let id = window.location.href.slice(76);
+        let url = window.location.href;
+        let current = url.substring(url.length - 5);
+        let id = current[0] == '?' ? current[current.length - 1] : current.substring(current.length - 2);
         if (id == 1) {
             img.src = 'img/蜜桃吉娃娃.png';
             name.innerText = '蜜桃吉娃娃';
@@ -147,6 +151,16 @@
             img.src = 'img/泰迪熊多肉.png';
             name.innerText = '泰迪熊多肉';
         }
+        $('#parentIframe1').on('click', function() {
+            layer.open({
+                type: 2,
+                title: '支付二维码',
+                maxmin: true,
+                shadeClose: true, //点击遮罩关闭层
+                area: ['400px', '400px'],
+                content: ['./qrCode.html', 'no']
+            });
+        });
     </script>
 </body>
 

@@ -35,7 +35,9 @@
         let img2 = document.getElementById('img2');
         let img3 = document.getElementById('img3');
         let img4 = document.getElementById('img4');
-        let id = window.location.href.slice(74);
+        let url = window.location.href;
+        let current = url.substring(url.length - 5);
+        let id = current[0] == '?' ? current[current.length - 1] : current.substring(current.length - 2);
         if (id == 2) {
             img1.src = 'img/wd2.jpg';
             img2.src = 'img/wd22.jpg';
@@ -46,6 +48,16 @@
             img2.src = 'img/wd33.jpg';
             img3.src = 'img/wd333.jpg';
             img4.src = 'img/wd3333.jpg';
+        } else if (id == 4) {
+            img1.src = 'img/xn21.jpg';
+            img2.src = 'img/xn22.jpg';
+            img3.src = 'img/xn23.jpg';
+            img4.src = 'img/xn24.jpg';
+        } else if (id == 5) {
+            img1.src = 'img/xn11.jpg';
+            img2.src = 'img/xn12.jpg';
+            img3.src = 'img/xn13.jpg';
+            img4.src = 'img/xn14.jpg';
         }
     </script>
     <script src="js/jquery.js"></script>
